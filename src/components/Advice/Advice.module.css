@@ -1,0 +1,68 @@
+.advice__box {
+  background-color: var(--secondary-dark-grayish-blue);
+  padding: 4rem 4rem;
+  width: 52.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+}
+
+.advice__box-inner {
+  position: relative;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.advice__no {
+  font-size: 1.2rem;
+  color: var(--primary-neon);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.advice__itself {
+  margin: 2.5rem 0;
+  font-size: 2.8rem;
+  color: var(--primary-cyan);
+}
+
+.advice__divider {
+  margin-bottom: 2.5rem;
+}
+
+.advice__btn {
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: none;
+  background-color: var(--primary-neon);
+  display: inline-block;
+  line-height: 0;
+  padding: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.advice__btn:hover {
+  box-shadow: 0 0 4rem var(--primary-neon);
+}
+
+.loading {
+  position: absolute;
+  top: -15rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 600px) {
+  .advice__box {
+    width: auto;
+  }
+}
