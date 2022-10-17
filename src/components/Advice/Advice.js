@@ -33,7 +33,7 @@ const Advice = () => {
     return () => {
       window.removeEventListener('resize', detectWidth);
     }
-  }, [width])
+  }, [width]);
 
   const toggleAdvice = () => {
     setshowLoading(true);
