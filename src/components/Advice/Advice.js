@@ -10,6 +10,7 @@ const Advice = () => {
   const [advice, setAdvice] = useState({});
   const [width, setWidth] = useState();
   const [showLoading, setshowLoading] = useState();
+  const [divider, setDivider] = useState(<DividerDesktop className={styles["advice__divider"]}></DividerDesktop>);
 
   useEffect(() => {
     axios({ method: "get", url: "https://api.adviceslip.com/advice" })
@@ -30,6 +31,13 @@ const Advice = () => {
   useEffect(() => {
     window.addEventListener('resize', detectWidth);
 
+    if(width < 601) {
+      setDivider(<DividerMobile className={styles["advice__divider"]}></DividerMobile>);
+    } else {
+      setDivider(<DividerDesktop className={styles["advice__divider"]}></DividerDesktop>);
+    }
+    
+
     return () => {
       window.removeEventListener('resize', detectWidth);
     }
@@ -45,8 +53,7 @@ const Advice = () => {
         <h4 className={styles["advice__no"]}>Advice #{advice.id}</h4>
         <h2 className={styles["advice__itself"]}>"{advice.advice}"</h2>
         {showLoading ? <SpinningCircles className={styles.loading}/> : ""}
-        {console.log(width)}
-        {width > 600 ? <DividerDesktop className={styles["advice__divider"]}></DividerDesktop> :  <DividerMobile className={styles["advice__divider"]}></DividerMobile>}
+        {divider}
       </div>
       <button className={styles["advice__btn"]} onClick={toggleAdvice}>
         <Dice></Dice>
