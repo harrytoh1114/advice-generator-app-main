@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Advice from './components/Advice/Advice';
 
